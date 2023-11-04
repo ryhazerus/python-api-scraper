@@ -1,10 +1,10 @@
-# ⚡ python-list-based-api-scraper (PAS)
+# ⚡python-list-based-api-scraper (PAS)
 A general tool to iterate over apis that provide a list of endpoints and download what's on that endpoint to a text file.
 To give a brief example:
 
 Let's say, `http://apis.com/list` returns a list of all available APIs online.
 
-```commandline
+```json
 pokemon, beer, humans, dog+breeds, cockatails
 car+brands, names, uniforms, sector
 ```
@@ -16,3 +16,15 @@ to a file.
 This was originally made to be able to have a simple way of automating a tedious task. I hope you also
 find this code useful. 
 
+
+## Notes
+This code is VERY rigid right now. This was only implemented as a helper code for another program I am writing.
+to use the code, if your needs are conform the parameters of this project, the only thing
+you would need to change are the following parameters at the top of `src/main.py` file:
+
+```python
+TIME_DELAY = 1
+LIST_URL = "https://www.myapi.com/api/list"
+BASE_URL = "https://www.myapi.com/"
+SAVE_LOCATION = "./output/"
+```
