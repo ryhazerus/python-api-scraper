@@ -4,7 +4,7 @@ from pathlib import Path
 from src.downloader.downloader import Scraper
 from src.handler.handler import FileHandler
 from src.parsers.parser import Parser
-from src.request_type_handlers.ResponseTypes import ResultType
+from src.response_type_handlers.ResponseTypes import ResultType
 
 TIME_DELAY = 1
 LIST_URL = "https://www.toptal.com/developers/gitignore/api/list"

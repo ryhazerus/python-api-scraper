@@ -1,7 +1,7 @@
 import requests
 from requests import Response
 
-from src.request_type_handlers.ResponseTypes import ResultType
+from src.response_type_handlers.ResponseTypes import ResultType
 
 
 class Scraper:
@@ -60,8 +60,8 @@ class Scraper:
     @staticmethod
     def result_types():
         """
-        Result request_type_handlers available for the GET request for parsing
+        Result response_type_handlers available for the GET request for parsing
         data at an endpoint.
-        :return: list of available result request_type_handlers.
+        :return: list of available result response_type_handlers.
         """
         return [response for response in ResultType]
