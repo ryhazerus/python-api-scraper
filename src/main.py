@@ -29,13 +29,13 @@ if __name__ == '__main__':
     # Parse the provided raw text (list of comma separated items)
     parser = Parser(list_response)
 
-    pretty_log(f"There are {len(parser.parsed_items)} to be downloaded")
+    pretty_log(f"There are {len(parser.parsed_items())} to be downloaded")
 
     # For each item in the list get the data from the endpoint
     pretty_log("Starting download now...")
 
     file_handler = FileHandler(SAVE_LOCATION)
-    for uri in parser.parsed_items:
+    for uri in parser.parsed_items():
         pretty_log(f"Downloading {uri}")
 
         formatted_url = f"{BASE_URL}/{uri}"
