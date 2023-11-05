@@ -17,7 +17,7 @@ This was originally made to be able to have a simple way of automating a tedious
 find this code useful. 
 
 
-## Notes
+### ✨  State
 This code is VERY rigid right now. This was only implemented as a helper code for another program I am writing.
 to use the code, if your needs are conform the parameters of this project, the only thing
 you would need to change are the following parameters at the top of `src/main.py` file:
@@ -28,3 +28,21 @@ LIST_URL = "https://www.myapi.com/api/list"
 BASE_URL = "https://www.myapi.com/"
 SAVE_LOCATION = "./output/"
 ```
+
+
+## 🛠️ Improvement plan
+The improvement plan for this repo is to turn this codebase into a relatively well structured python package.
+- [x] Provide clear support for raw text based lists and endpoints
+- [ ] Convert codebase into python package
+- [ ] Implement Github Actions for testing
+- [ ] Create Release
+
+## 🛣️ Feature Roadmap
+- [x] Text Support
+- [ ] JSON Support
+- [ ] XML  Support
+
+## ⚒️ Built with
+- Poetry
+- Python 3.12
+- Requests
