@@ -5,6 +5,9 @@ class Parser:
         self.__delimiter = delimiter
 
     def parsed_items(self):
+        if not self.__text:
+            return []
+
         line_split = self.__text.split("\n")
         lines = self.__delimiter.join(line_split)
         item_per_line = lines.split(self.__delimiter)
