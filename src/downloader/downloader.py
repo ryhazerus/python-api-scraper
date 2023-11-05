@@ -1,3 +1,5 @@
+from typing import Any
+
 import requests
 from requests import Response
 
@@ -15,7 +17,6 @@ class Scraper:
     def __init__(self, url: str, response_type: ResultType = ResultType.JSON):
         self.__url: str = url
         self.__response_type = response_type
-        self.__list_items: [str] = []
 
     def get_list(self):
         """
@@ -37,12 +38,18 @@ class Scraper:
         return self.__generic_response_handler(response)
 
     def __generic_response_handler(self, response):
+        """
+         Response handler for successful calls.
+        :param response: the raw response.
+        :return: None if request is not successful
+        the given request return type.
+        """
         if response.status_code == 200:
             return self.__return_response(response)
 
         return None
 
-    def __return_response(self, raw_response) -> Response:
+    def __return_response(self, raw_response) -> Response | None:
         """
         Match the type of return value to the data expected to be
         at the end of the endpoint.
@@ -55,7 +62,7 @@ class Scraper:
             case ResultType.TEXT:
                 return raw_response.text
             case _:
-                return NotImplemented
+                return None
 
     @staticmethod
     def result_types():
